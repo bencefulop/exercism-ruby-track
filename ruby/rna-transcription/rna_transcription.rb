@@ -1,8 +1,16 @@
-=begin
-Write your code for the 'Rna Transcription' exercise in this file. Make the tests in
-`rna_transcription_test.rb` pass.
+class Complement
 
-To get started with TDD, see the `README.md` file in your
-`ruby/rna-transcription` directory.
-=end
-
+COMPLEMENTS = {
+G: "C",
+C: "G",
+T: "A",
+A: "U"
+}
+  def self.of_dna(nucleotides)
+    rna_output = ""
+    nucleotides
+      .split
+      .each { |n| rna_output += COMPLEMENTS[:n] }
+    rna_output
+  end
+end
