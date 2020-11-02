@@ -11,7 +11,7 @@ A: "U"
     nucleotides
       .split("")
       .each do |n| 
-        COMPLEMENTS[:"#{n}"] ? rna_output += COMPLEMENTS[:"#{n}"] : return
+        COMPLEMENTS[n.to_sym] ? rna_output += COMPLEMENTS[n.to_sym] : return
       end
     rna_output
   end
