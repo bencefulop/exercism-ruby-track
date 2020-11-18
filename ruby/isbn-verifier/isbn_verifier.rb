@@ -1,9 +1,7 @@
-require 'pry'
-
 class IsbnVerifier
   def self.valid?(number)
     number.gsub!("-", "")
-    return false unless number =~ /^\d{9}[\d|X]$/    
+    return false unless number =~ /^\d{9}[\d|X]$/
 
     sum = 0
 
