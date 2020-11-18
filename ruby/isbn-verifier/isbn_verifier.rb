@@ -1,3 +1,5 @@
+require 'pry'
+
 class IsbnVerifier
   def self.valid?(number)
     number.gsub!("-", "")
