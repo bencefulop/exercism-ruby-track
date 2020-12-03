@@ -55,4 +55,11 @@ class SpaceAgeTest < Minitest::Test
     age = SpaceAge.new(8_210_123_456)
     assert_in_delta 1.58, age.on_neptune, DELTA
   end
+
+  def test_age_on_pluto
+    # skip
+    age = SpaceAge.new(8_210_123_456)
+    err = assert_raises(StandardError) { age.on_pluto }
+    assert_equal("pluto is not a valid planet", err.message)
+  end
 end
