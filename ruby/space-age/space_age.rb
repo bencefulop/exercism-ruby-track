@@ -3,10 +3,14 @@ class SpaceAge
     @seconds = seconds
   end
 
-# 1_000_000_000 seconds = / 60 minutes /60 hours / 24 days / 365.25 years
-
+  # MAYBE REFACTOR WITH THE SEND METHOD?
+  # Set up kay/value pairs, or constants?
+  
   def on_earth
-    ((((@seconds.to_f / 60) / 60) / 24) / 365.25).round(2)
+    # 1_000_000_000 seconds = / 60 minutes /60 hours / 24 days / 365.25 years
+    (@seconds.to_f / 31_557_600).round(2)
+    # (@seconds.to_f / 60 / 60 / 24 / 365.25).round(2)
+    # ((((@seconds.to_f / 60) / 60) / 24) / 365.25).round(2)
   end
 
   def on_mercury
