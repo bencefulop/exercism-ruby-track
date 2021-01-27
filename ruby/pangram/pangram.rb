@@ -1,8 +1,6 @@
-=begin
-Write your code for the 'Pangram' exercise in this file. Make the tests in
-`pangram_test.rb` pass.
-
-To get started with TDD, see the `README.md` file in your
-`ruby/pangram` directory.
-=end
-
+class Pangram
+  LETTERS = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z]
+  def self.pangram?(sentence)
+    (LETTERS - (sentence.chars)).empty?
+  end
+end
