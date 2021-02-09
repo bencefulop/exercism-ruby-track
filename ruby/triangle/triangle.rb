@@ -1,5 +1,6 @@
 class Triangle
 attr_reader :a, :b, :c
+
   def initialize(sides)
     @sides = sides
     @a = @sides[0]
@@ -15,12 +16,18 @@ attr_reader :a, :b, :c
   end
   
   def isosceles?
+    
     if a == b && b != c 
+      return true
+    elsif a == b && b == c
       return true
     elsif a == c && c != b
       return true
     elsif b == c && c != a
       return true
+    elsif a + b < c
+      return false
     end
+
   end
 end
