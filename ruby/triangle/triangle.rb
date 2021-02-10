@@ -17,6 +17,8 @@ attr_reader :a, :b, :c
   
   def isosceles?
     
+  return false if a + b < c || a + c < b || b + c < a
+
     if a == b && b != c 
       return true
     elsif a == b && b == c
@@ -25,9 +27,14 @@ attr_reader :a, :b, :c
       return true
     elsif b == c && c != a
       return true
-    elsif a + b < c
-      return false
     end
 
+  end
+
+  def scalene?
+    return false if a + b < c || a + c < b || b + c < a
+
+
+    return true if a != b && b != c && c != a
   end
 end
