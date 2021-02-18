@@ -5,15 +5,14 @@ class Matrix
   attr_reader :rows
 
   def initialize(numbers)
-    @numbers = numbers.split
+    @numbers = numbers
     @rows = extract_rows(@numbers)
-    # binding.pry
-    # // TODO // 
-    # need to save @rows and @colums. need attr_readers too
   end
 
   def extract_rows(numbers)
-    array = number.split.map {|n| n.to_i }
+    elements = numbers.split("\n")
+    result = elements.map{ |n| n.split("\s") }
+    result.map {|e| e.map {|n| n.to_i}}
     
   end
 end
