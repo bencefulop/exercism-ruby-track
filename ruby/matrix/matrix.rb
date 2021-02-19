@@ -1,7 +1,4 @@
-require 'pry'
-
 class Matrix
-
   attr_reader :rows, :columns
 
   def initialize(numbers)
@@ -11,17 +8,14 @@ class Matrix
   end
 
   def extract_rows(numbers)
-    numbers.map { |n| n.split("\s") }.map { |e| e.map { |n| n.to_i } }
+    numbers.map { |n| n.split("\s") }.map { |e| e.map(&:to_i) }
   end
 
-  def extract_columns(numbers)
-    counter = 0
-    columns_array = Array.new(@rows.first.length) {Array.new()}
+  def extract_columns(_numbers)
+    columns_array = Array.new(@rows.first.length) { [] }
 
-    @rows.each do |row| 
+    @rows.each do |row|
       row.each_with_index do |num, i|
-        # push each item to the columns array based on their index
-        # binding.pry
         columns_array[i] << num
       end
     end
