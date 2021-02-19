@@ -15,17 +15,16 @@ class Matrix
   end
 
   def extract_columns(numbers)
-    # @rows.map do |row|
-    #   row.map.with_index do |n,i|
-        
-    #   end
-    # end
     counter = 0
-    result = @rows.map.with_index do |n,i| 
-      # binding.pry
-      n[counter]
-      counter += 1
+    columns_array = Array.new(@rows.first.length) {Array.new()}
+
+    @rows.each do |row| 
+      row.each_with_index do |num, i|
+        # push each item to the columns array based on their index
+        # binding.pry
+        columns_array[i] << num
+      end
     end
-    result
+    columns_array
   end
 end
