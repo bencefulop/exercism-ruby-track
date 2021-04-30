@@ -5,10 +5,10 @@ class Matrix
   end
 
   def rows
-    rows ||= @numbers.split("\n").map(&:split).map { |e| e.map(&:to_i) }
+    @rows ||= @numbers.each_line.map(&:split).map { |e| e.map(&:to_i) }
   end
 
   def columns
-    rows.transpose
+    @columns ||= rows.transpose
   end
 end
