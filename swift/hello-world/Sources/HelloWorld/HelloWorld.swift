@@ -1,6 +1,7 @@
 //Solution goes in Sources
 class HelloWorld {
     static func hello(_ name: String? = nil) -> String {
-        name == nil ? "Hello, World!" : "Hello, \(name!)!"
+//        name == nil ? "Hello, World!" : "Hello, \(name!)!"
+        return "Hello, \(name ?? "World")!"
     }
 }
