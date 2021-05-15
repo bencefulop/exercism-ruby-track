@@ -1,6 +1,4 @@
 //Solution goes in Sources
-class TwoFer{
-    static func twoFer(name: String? = nil) -> String {
-        return "One for \(name ?? "you"), one for me."
+    public func twoFer(name: String = "you") -> String {
+        "One for \(name), one for me."
     }
-}
