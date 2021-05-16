@@ -1,14 +1,24 @@
 //Solution goes in Sources
-//Solution goes in Sources
+import Foundation
+
 class DNA {
     let strand: String
 
     init?(strand: String) {
-        self.strand = strand
+        let range = NSRange(location: 0, length: strand.utf16.count)
+        let regex = try! NSRegularExpression(pattern: "[ATCG]")
+        let result = regex.firstMatch(in: strand, options: [], range: range) != nil
+        if result == true {
+            self.strand = strand
+        } else if strand == "" {
+            self.strand = strand
+        } else {
+            return nil
+        }
     }
 
-    func count(_ myChar: Character) -> Int {
-        self.strand.filter { $0 == myChar }.count
+    func count(_ nucleotide: Character) -> Int {
+        self.strand.filter({ $0 == nucleotide }).count
     }
 
     func counts() -> [String : Int] {
@@ -19,6 +29,5 @@ class DNA {
 
         return ["T": thymineNumber, "A": adenineNumber, "C": cytosineNumber, "G": guanineNumber]
     }
-
 }
 
