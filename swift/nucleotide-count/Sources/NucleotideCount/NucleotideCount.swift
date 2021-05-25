@@ -8,7 +8,7 @@ class DNA {
         let range = NSRange(location: 0, length: strand.utf16.count)
         let regex = try! NSRegularExpression(pattern: "[ATCG]")
         let result = regex.firstMatch(in: strand, options: [], range: range) != nil
-        if result == true {
+        if result {
             self.strand = strand
         } else if strand == "" {
             self.strand = strand
