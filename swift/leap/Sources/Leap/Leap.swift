@@ -1,17 +1,15 @@
 //Solution goes in Sources
 class Year {
-    var calendarYear: Int
     var isLeapYear: Bool = false
     
     init(calendarYear: Int) {
-        self.calendarYear = calendarYear
-        isItLeapYear(self.calendarYear)
+        isItLeapYear(calendarYear)
     }
-    
+
     func isItLeapYear(_ year:Int) {
-        if year % 4 == 0 {
-            if year % 100 == 0 {
-                if year % 400 == 0 {
+        if year.isMultiple(of: 4) {
+            if year.isMultiple(of: 100) {
+                if year.isMultiple(of: 400) {
                     self.isLeapYear = true
                 }
                 return
