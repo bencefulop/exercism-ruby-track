@@ -4,17 +4,15 @@ import Foundation
 
 struct Squares {
     let squareOfSum: Int
-
     let sumOfSquares: Int
-
     let differenceOfSquares: Int
-
+    
     init(_ n: Int) {
         self.squareOfSum = Squares.calculateSquareOfSum(n)
         self.sumOfSquares = Squares.calculateSumOfSquares(n)
         self.differenceOfSquares = Squares.calculateDifferenceOfSquares(n)
     }
-
+    
     static func calculateSquareOfSum(_ n: Int) -> Int {
         var result: Double = 0.0
         var number = 0
@@ -29,7 +27,6 @@ struct Squares {
     
     static func calculateSumOfSquares(_ n: Int) -> Int {
         var result: Int = 0
-        
         var number = 0
         
         while number < n {
@@ -41,7 +38,7 @@ struct Squares {
     }
     
     static func calculateDifferenceOfSquares(_ n: Int) -> Int {
-        return Int(calculateSquareOfSum(n)) - calculateSumOfSquares(n)
+        return calculateSquareOfSum(n) - calculateSumOfSquares(n)
     }
     
 }
